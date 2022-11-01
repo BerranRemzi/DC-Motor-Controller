@@ -42,14 +42,20 @@ typedef enum
  */
 typedef enum
 {
-    SOFTSPI_MOSI,      /**< PORT1_0 */
-    SOFTSPI_CLK,       /**< PORT1_1 */
-    SOFTSPI_CS,        /**< PORT1_2 */
-    BUTTON_UP,         /**< PORT1_3 */
-    BUTTON_DOWN,       /**< PORT1_4 */
-    BUTTON_RIGHT,      /**< PORT1_5 */
-    BUTTON_LEFT,       /**< PORT1_6 */
-    BUTTON_STOP,       /**< PORT1_7 */
+    DIO_D0,
+    DIO_D1,
+    BUTTON_UP,
+    BUTTON_DOWN,
+    BUTTON_RIGHT,
+    BUTTON_LEFT,
+    SOFTSPI_MOSI,
+    SOFTSPI_CLK,
+    SOFTSPI_CS,
+    BUTTON_STOP,
+    DIO_10,
+    DIO_11,
+    DIO_12,
+    DIO_LED,
     DIO_MAX_PIN_NUMBER /**< MAX CHANNELS */
 } DioChannel_t;
 
@@ -78,8 +84,9 @@ typedef enum
  */
 typedef enum
 {
-    OUTPUT, /**< Reserved word representing the mode of an I/O pin or an I/O port as an input */
-    INPUT   /**< Reserved word representing the mode of an I/O pin or an I/O port as an output */
+    DIO_OUTPUT, /**< Reserved word representing the mode of an I/O pin or an I/O port as an input */
+    DIO_INPUT,  /**< Reserved word representing the mode of an I/O pin or an I/O port as an output */
+    DIO_INPUT_PULLUP
 } PinModeEnum_t;
 
 /**

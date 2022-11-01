@@ -12,4 +12,5 @@ SoftTimer_Task_t SoftTimer_task[TASK_COUNT] = {
     {&Button_Task, 10u},
     {&TimerCounter_Task, 10u},
     {&Watchdog_Task, 50u},
+    {&SoftTimer_HeartBeat, 500u},
 };

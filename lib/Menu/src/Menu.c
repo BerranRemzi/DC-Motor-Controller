@@ -11,7 +11,7 @@
 void Menu_Init(void)
 {
 }
-uint16_t counter = 0u;
+static uint16_t counter = 0u;
 
 void Menu_Task(void)
 {

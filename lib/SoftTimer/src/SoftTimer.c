@@ -7,6 +7,7 @@
  */
 #include "SoftTimer.h" /* For this modules definitions */
 #include "SoftTimer_cfg.h"
+#include "Dio.h"
 
 #ifdef ARDUINO
 #include <Arduino.h> /* For Hardware definitions     */
@@ -30,7 +31,7 @@ void SoftTimer_Task(void)
 {
     uint32_t currentTime = millis();
 
-    for (uint8_t i = 0; i < TASK_COUNT; ++i)
+    for (uint8_t i = 0u; i < TASK_COUNT; i++)
     {
         uint32_t timePassed = (uint32_t)(currentTime - SoftTimer_task[i].previousTime);
         if (timePassed >= SoftTimer_task[i].period)
@@ -39,4 +40,9 @@ void SoftTimer_Task(void)
             SoftTimer_task[i].CallbackFunction();
         }
     }
+}
+
+void SoftTimer_HeartBeat(void)
+{
+    Dio_ChannelToggle(DIO_LED);
 }

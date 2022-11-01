@@ -1,5 +1,5 @@
 #include <Arduino.h>
-
+#include <Dio.h>
 #include <Button.h>
 #include <Pwm.h>
 #include <SevSeg.h>
@@ -12,6 +12,7 @@
  */
 void setup()
 {
+  Dio_Init();
   Button_Init();
   Pwm_Init();
   SevSeg_Init();

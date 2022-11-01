@@ -44,6 +44,7 @@ extern "C"
      */
     void SoftTimer_Init(void);
     void SoftTimer_Task(void);
+    void SoftTimer_HeartBeat(void);
 
 #ifdef __cplusplus
 }

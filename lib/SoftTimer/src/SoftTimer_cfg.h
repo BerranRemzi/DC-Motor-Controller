@@ -18,7 +18,7 @@
 /*
  * Configuration Constants
  */
-#define TASK_COUNT 5
+#define TASK_COUNT 6
 /*
  * Macros
  */
