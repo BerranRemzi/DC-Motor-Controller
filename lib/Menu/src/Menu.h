@@ -38,6 +38,9 @@ extern "C"
      */
     void Menu_Init(void);
     void Menu_Task(void);
+    void Menu_Callback_SinglePress(void);
+    void Menu_Callback_ContinuousPress(void);
+    void Menu_Callback_LongPress(void);
 
 #ifdef __cplusplus
 }

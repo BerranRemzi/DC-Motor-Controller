@@ -16,17 +16,17 @@ static inline void Spi_Delay(void)
 
 static inline void Spi_ToggleClock(void)
 {
-    Dio_ChannelWrite(SOFTSPI_CLK, DIO_HIGH);
+    Dio_ChannelWrite(DIO_SOFTSPI_CLK, DIO_HIGH);
     Spi_Delay();
-    Dio_ChannelWrite(SOFTSPI_CLK, DIO_LOW);
+    Dio_ChannelWrite(DIO_SOFTSPI_CLK, DIO_LOW);
     Spi_Delay();
 }
 
 static inline void Spi_ToggleOutput(void)
 {
-    Dio_ChannelWrite(SOFTSPI_CS, DIO_HIGH);
+    Dio_ChannelWrite(DIO_SOFTSPI_CS, DIO_HIGH);
     Spi_Delay();
-    Dio_ChannelWrite(SOFTSPI_CS, DIO_LOW);
+    Dio_ChannelWrite(DIO_SOFTSPI_CS, DIO_LOW);
     Spi_Delay();
 }
 
@@ -39,7 +39,7 @@ void Spi_Transmit(uint8_t *pData, uint16_t size)
 #ifdef SPI_MSB_FIRST
             Dio_ChannelWrite(SOFTSPI_MOSI, (pData[n] >> i) & 0x01u ? DIO_HIGH : DIO_LOW);
 #else
-            Dio_ChannelWrite(SOFTSPI_MOSI, (pData[n] << i) & 0x80u ? DIO_HIGH : DIO_LOW);
+            Dio_ChannelWrite(DIO_SOFTSPI_MOSI, (pData[n] << i) & 0x80u ? DIO_HIGH : DIO_LOW);
 #endif
             Spi_ToggleClock();
         }
